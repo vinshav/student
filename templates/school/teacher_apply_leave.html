@@ -1,0 +1,120 @@
+{% extends 'school/teacherbase.html' %}
+{% block content %}
+
+
+<div class="page-header">
+  <div class="row align-items-center">
+    <div class="col">
+      <h3 class="page-title">&nbsp;Teachers's</h3>
+      <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="teacher_dashboard.html">Dashboard</a></li>
+        <li class="breadcrumb-item active">Teachers</li>
+      </ul>
+    </div>
+
+    <div class="col-auto text-right float-right ml-auto">
+      <button class="btn btn-outline-primary mr-2" data-toggle="modal" data-target=".bd-example-modal-lg" type="button"><i class="fas fa-pray"></i>&nbsp;Leave Apply History</button>
+      
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-body">
+        <form method="post" action="{% url 'teacher-apply-leave-save' %}">
+          {% csrf_token %}
+
+          <div class="col-12">
+            <h5 class="form-title"><span>Apply For Leave</span></h5>
+          </div>
+
+          <div class="col-sm-11">
+            <div class="form-group">
+              <label>Leave Date</label>
+              <input type="date" class="form-control" name="leave_date" required>
+            </div>
+          </div>
+
+          <div class="col-sm-11">
+            <div class="form-group">
+              <label>Leave Message</label>
+              <textarea class="form-control" name="leave_message" style="height: 250px;" required></textarea>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Apply For Leave</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Leave Apply History</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body"><br>
+
+
+
+          <div class="container">
+
+            <div class="row" >
+      
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h6 class="panel-title">Teachers</h6>
+      
+                </div>
+      
+                <table class="table table-hover table-striped table-bordered" id="dev-table">
+                  <thead>
+      
+                      <tr>
+                          <th>Name</th>
+                          <th>created at</th>
+                          <th>updated at</th>
+                          <!-- <th>Joining Date</th> -->
+                          <th>Action</th>
+      
+                      </tr>
+                  </thead>
+                  {% for t in teachers %}
+                    <tr>
+                        <td> {{t.user}}</td>
+                        <td>{{t.created_at}}</td>
+                        <td>{{t.updated_at}}</td>
+                        <!-- <td>{{t.joindate}}</td> -->
+                        
+                    </tr>
+      
+                  {% endfor %}
+                </table>
+              </div>
+      
+      
+              </div>
+            </div>
+      
+      
+      
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

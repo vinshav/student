@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  <style>
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: auto;
+      text-align: center;
+      font-family: arial;
+    }
+
+    .title {
+      color: grey;
+      font-size: 18px;
+    }
+
+    button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+      font-size: 18px;
+    }
+
+    button:hover,
+    a:hover {
+      opacity: 0.7;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      padding: 10px;
+    }
+
+    a:link {
+      text-decoration: none;
+    }
+
+    a {
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="grid-container">
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/images3.jpg" %}" alt="John" style="width:100%">
+        <p class="title">ADMIN Area</p>
+        <p><a href="/adminclick"><button>View</button></a></p>
+      </div>
+
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/download2.jpg" %}" alt="John" style="width:100%">
+        <p class="title">TEACHER Area</p>
+        <p><a href="/teacherclick"><button>View</button></a></p>
+      </div>
+    </div>
+
+    <div class="grid-item">
+      <div class="card">
+        <img src="{% static "images/download.jpg" %}" alt="John" style="width:100%">
+        <p class="title">STUDENT Area</p>
+        <p><a href="/studentclick"><button>View</button></a></p>
+      </div>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+</html>
